@@ -1,20 +1,30 @@
 # Maintainer: Sung Pae <self@sungpae.com>
 pkgname=fakedeps
-pkgver=2
+pkgver=6
 pkgrel=1
 pkgdesc="A dummy package that satisfies unwanted dependencies."
 arch=('any')
 license=('GPL')
 groups=('nerv')
-provides=(polkit rtkit avahi at-spi2-atk gvfs)
-conflicts=(polkit rtkit avahi at-spi2-atk gvfs)
-replaces=(polkit rtkit avahi at-spi2-atk gvfs)
+__PACKAGES__=(polkit rtkit avahi at-spi2-atk gvfs colord)
+provides=("${__PACKAGES__[@]}")
+conflicts=("${__PACKAGES__[@]}")
+replaces=("${__PACKAGES__[@]}")
+
+_package_lib() {
+    gcc "$1" -shared -o "$2"
+    install -Dm 0755 "$2" "$pkgdir/usr/lib/$2"
+    local link
+    for link in "${@:3}"; do
+        ln -s "$2" "$pkgdir/usr/lib/$link"
+    done
+}
 
 package() {
     cd "$startdir"
 
-    gcc libatk-bridge-2.0.c -shared -o libatk-bridge-2.0.so
-    install -Dm 0755 libatk-bridge-2.0.so "$pkgdir/usr/lib/libatk-bridge-2.0.so"
-    ln -s libatk-bridge-2.0.so "$pkgdir/usr/lib/libatk-bridge-2.0.so.0"
-    ln -s libatk-bridge-2.0.so "$pkgdir/usr/lib/libatk-bridge-2.0.so.0.0.0"
+    _package_lib libatk-bridge-2.0.c libatk-bridge-2.0.so{,.0,.0.0.0}
+    _package_lib libavahi-common.c   libavahi-common.so{,.3,.3.5.3}
+    _package_lib libavahi-client.c   libavahi-client.so{,.3,.3.2.9}
+    _package_lib libcolord.c         libcolord.so{,.2,.2.0.5}
 }
