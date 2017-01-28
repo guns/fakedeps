@@ -1,12 +1,12 @@
 # Maintainer: Sung Pae <self@sungpae.com>
 pkgname=fakedeps
-pkgver=6
+pkgver=7
 pkgrel=1
 pkgdesc="A dummy package that satisfies unwanted dependencies."
 arch=('any')
 license=('GPL')
 groups=('nerv')
-__PACKAGES__=(polkit rtkit avahi at-spi2-atk gvfs colord)
+__PACKAGES__=(polkit rtkit avahi at-spi2-atk gvfs colord{,-gtk})
 provides=("${__PACKAGES__[@]}")
 conflicts=("${__PACKAGES__[@]}")
 replaces=("${__PACKAGES__[@]}")
@@ -27,4 +27,5 @@ package() {
     _package_lib libavahi-common.c   libavahi-common.so{,.3,.3.5.3}
     _package_lib libavahi-client.c   libavahi-client.so{,.3,.3.2.9}
     _package_lib libcolord.c         libcolord.so{,.2,.2.0.5}
+    _package_lib libcolord-gtk.c     libcolord-gtk.so{,.1,.1.0.3}
 }
