@@ -6,10 +6,9 @@ pkgdesc="A dummy package that satisfies unwanted dependencies."
 arch=('any')
 license=('GPL')
 groups=('nerv')
-__PACKAGES__=(polkit rtkit avahi at-spi2-atk gvfs colord{,-gtk} gnome-online-accounts)
-provides=("${__PACKAGES__[@]}")
-conflicts=("${__PACKAGES__[@]}")
-replaces=("${__PACKAGES__[@]}")
+provides=(polkit rtkit avahi at-spi2-atk gvfs colord{,-gtk} gnome-online-accounts)
+conflicts=("${provides[@]}")
+replaces=("${provides[@]}")
 
 _package_lib() {
     gcc "$1" -shared -o "$2"
