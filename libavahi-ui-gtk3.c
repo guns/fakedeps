@@ -12,5 +12,5 @@ extern void aui_service_dialog_set_resolve_host_name() {}
 extern void aui_service_dialog_set_resolve_service() {}
 extern void avahi_service_browser_free() {}
 extern void avahi_service_resolver_free() {}
-extern void avahi_service_resolver_get_client() { return 0; }
+extern void avahi_service_resolver_get_client() {}
 extern void avahi_simple_poll_free() {}
