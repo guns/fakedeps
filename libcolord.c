@@ -8,7 +8,10 @@ extern void *cd_client_find_device_finish() { return 0; }
 extern void *cd_client_new() { return 0; }
 extern void *cd_device_get_id() { return 0; }
 extern void *cd_device_get_profile_for_qualifiers_finish() { return 0; }
+extern void *cd_profile_get_filename() { return 0; }
 extern void *cd_profile_get_title() { return 0; }
+extern void *cd_window_get_profile_finish() { return 0; }
+extern void *cd_window_get_type() { return 0; }
 extern void cd_client_connect() {}
 extern void cd_client_find_device() {}
 extern void cd_device_connect() {}
