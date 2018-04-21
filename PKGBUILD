@@ -1,6 +1,6 @@
 # Maintainer: Sung Pae <self@sungpae.com>
 pkgname=fakedeps
-pkgver=18
+pkgver=19
 pkgrel=1
 pkgdesc="A dummy package that satisfies unwanted dependencies."
 arch=('any')
@@ -29,4 +29,7 @@ package() {
     _package_lib libcloudproviders.c libcloudproviders.so{,.0,.0.2.5}
     _package_lib libcolord-gtk.c     libcolord-gtk.so{,.1,.1.0.3}
     _package_lib libcolord.c         libcolord.so{,.2,.2.0.5}
+
+    install -d "$pkgdir/usr/lib/pkgconfig"
+    install -m 0644 atk-bridge-2.0.pc "$pkgdir/usr/lib/pkgconfig/"
 }
