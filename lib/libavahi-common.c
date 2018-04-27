@@ -22,11 +22,13 @@ extern void *avahi_service_resolver_new() { return 0; }
 extern void *avahi_simple_poll_get() { return 0; }
 extern void *avahi_simple_poll_new() { return 0; }
 extern void *avahi_strerror() { return 0; }
+extern void *avahi_string_list_add() { return 0; }
 extern void *avahi_string_list_add_printf() { return 0; }
 extern void *avahi_string_list_find() { return 0; }
 extern void *avahi_threaded_poll_get() { return 0; }
 extern void *avahi_threaded_poll_new() { return 0; }
 extern void avahi_client_free() {}
+extern void avahi_set_allocator() {}
 extern void avahi_simple_poll_free() {}
 extern void avahi_simple_poll_quit() {}
 extern void avahi_simple_poll_set_func() {}
