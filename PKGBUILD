@@ -1,6 +1,6 @@
 # Maintainer: Sung Pae <self@sungpae.com>
 pkgname=fakedeps
-pkgver=19
+pkgver=21
 pkgrel=1
 pkgdesc="A dummy package that satisfies unwanted dependencies."
 arch=('any')
@@ -11,8 +11,8 @@ conflicts=("${provides[@]}")
 replaces=("${provides[@]}")
 
 _package_lib() {
-    gcc "$1" -shared -o "$2"
-    install -Dm 0755 "$2" "$pkgdir/usr/lib/$2"
+    gcc "lib/$1" -shared -o "lib/$2"
+    install -Dm 0755 "lib/$2" "$pkgdir/usr/lib/$2"
     local link
     for link in "${@:3}"; do
         ln -s "$2" "$pkgdir/usr/lib/$link"
@@ -31,5 +31,5 @@ package() {
     _package_lib libcolord.c         libcolord.so{,.2,.2.0.5}
 
     install -d "$pkgdir/usr/lib/pkgconfig"
-    install -m 0644 atk-bridge-2.0.pc "$pkgdir/usr/lib/pkgconfig/"
+    install -m 0644 lib/pkgconfig/*.pc "$pkgdir/usr/lib/pkgconfig/"
 }
