@@ -1,12 +1,24 @@
 # Maintainer: Sung Pae <self@sungpae.com>
 pkgname=fakedeps
-pkgver=24
+pkgver=25
 pkgrel=1
 pkgdesc="A dummy package that satisfies unwanted dependencies."
 arch=('any')
 license=('GPL')
 groups=('nerv')
-provides=(polkit geoclue2 rtkit avahi at-spi2-atk gvfs colord{,-gtk} gnome-online-accounts gst-plugins-bad libcloudproviders)
+provides=(
+    at-spi2-atk
+    avahi
+    colord{,-gtk}
+    geoclue2
+    gnome-online-accounts
+    gst-plugins-bad
+    gvfs
+    libcloudproviders
+    polkit
+    rtkit
+    xdg-desktop-portal
+)
 conflicts=("${provides[@]}")
 replaces=("${provides[@]}")
 
