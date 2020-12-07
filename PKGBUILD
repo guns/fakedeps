@@ -1,6 +1,6 @@
 # Maintainer: Sung Pae <self@sungpae.com>
 pkgname=fakedeps
-pkgver=25
+pkgver=26
 pkgrel=1
 pkgdesc="A dummy package that satisfies unwanted dependencies."
 arch=('any')

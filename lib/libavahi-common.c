@@ -28,6 +28,7 @@ extern void *avahi_string_list_find() { return 0; }
 extern void *avahi_threaded_poll_get() { return 0; }
 extern void *avahi_threaded_poll_new() { return 0; }
 extern void avahi_client_free() {}
+extern void avahi_free() {}
 extern void avahi_set_allocator() {}
 extern void avahi_simple_poll_free() {}
 extern void avahi_simple_poll_quit() {}
