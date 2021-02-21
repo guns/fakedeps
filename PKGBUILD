@@ -1,6 +1,6 @@
 # Maintainer: Sung Pae <self@sungpae.com>
 pkgname=fakedeps
-pkgver=26
+pkgver=27
 pkgrel=1
 pkgdesc="A dummy package that satisfies unwanted dependencies."
 arch=('any')
@@ -8,6 +8,7 @@ license=('GPL')
 groups=('nerv')
 provides=(
     at-spi2-atk
+    at-spi2-core
     avahi
     colord{,-gtk}
     geoclue2
