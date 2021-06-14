@@ -4,6 +4,8 @@ extern int atspi_accessible_get_process_id() { return 0; }
 extern int atspi_event_listener_deregister() { return 0; }
 extern int atspi_event_listener_register() { return 0; }
 extern int atspi_init() { return 0; }
+extern int atspi_relation_get_n_targets() { return 0; }
+extern int atspi_relation_get_relation_type() { return 0; }
 extern void *atspi_accessible_get_action() { return 0; }
 extern void *atspi_accessible_get_application() { return 0; }
 extern void *atspi_accessible_get_attributes() { return 0; }
@@ -32,6 +34,7 @@ extern void *atspi_accessible_get_toolkit_version() { return 0; }
 extern void *atspi_accessible_get_value() { return 0; }
 extern void *atspi_event_get_type() { return 0; }
 extern void *atspi_event_listener_new() { return 0; }
+extern void *atspi_relation_get_target() { return 0; }
 extern void *atspi_role_get_name() { return 0; }
 extern void atspi_accessible_get_role() {}
 
